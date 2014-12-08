@@ -20,11 +20,12 @@ public class HiAppiumTest {
 
 	private static final String APPIUM_SERVER = "http://127.0.0.1:4723/wd/hub/";
 	private static final int SIXTY_SECONDS = 60;
+	private static final long _5_SECONDS = 5000;
 	private AppiumDriver appiumDriver;
 
 	@Before
 	public void setup() throws IOException{
-		DesiredCapabilities capabilities = new MobileProperty(DevicePlatform.IOS).buildAndroidCapabilities();
+		DesiredCapabilities capabilities = new MobileProperty(DevicePlatform.IOS).buildCapabilities();
 		appiumDriver = createAppiumDriver(capabilities);
 	}
 	
@@ -36,10 +37,13 @@ public class HiAppiumTest {
 	}
 
 	@Test
-	public void test() throws MalformedURLException {
+	public void test() throws MalformedURLException, InterruptedException {
 		appiumDriver.manage().timeouts().implicitlyWait(SIXTY_SECONDS, TimeUnit.SECONDS);
+		Thread.sleep(_5_SECONDS);
 		WebElement okButton = getElementByName("OK");
 		okButton.click();
+		WebElement iDontHaveAnyCodeButton = getElementByName("I don't have any code");
+		iDontHaveAnyCodeButton.click();
 	}
 
 	private WebElement getElementByName(String buttonName) {
