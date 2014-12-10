@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import com.br.mobinov.config.MobileProperty;
@@ -19,7 +18,6 @@ import com.br.mobinov.config.MobileProperty.DevicePlatform;
 public class AndroidTest {
 
 	private static final int SIXTY_SECONDS = 60;
-	private static final long _5_SECONDS = 5000;
 	private static final String APPIUM_SERVER = "http://127.0.0.1:4723/wd/hub/";
 
 	private AppiumDriver appiumDriver;
@@ -40,11 +38,6 @@ public class AndroidTest {
 	@Test
 	public void testHelloAndroid() throws MalformedURLException, InterruptedException {
 		appiumDriver.manage().timeouts().implicitlyWait(SIXTY_SECONDS, TimeUnit.SECONDS);
-	}
-
-	private WebElement getElementByName(String buttonName) {
-		WebElement okButton = appiumDriver.findElementByName(buttonName);
-		return okButton;
 	}
 
 	private AppiumDriver createAppiumDriver(DesiredCapabilities capabilities)

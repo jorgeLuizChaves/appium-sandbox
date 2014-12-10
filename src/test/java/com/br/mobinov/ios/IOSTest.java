@@ -19,7 +19,6 @@ import com.br.mobinov.config.MobileProperty.DevicePlatform;
 public class IOSTest {
 
 	private static final int SIXTY_SECONDS = 60;
-	private static final long _5_SECONDS = 5000;
 	private static final String APPIUM_SERVER = "http://127.0.0.1:4723/wd/hub/";
 
 	private AppiumDriver appiumDriver;
