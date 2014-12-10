@@ -1,10 +1,10 @@
-package com.br.mobinov.android;
+package com.br.mobinov.ios;
+import io.appium.java_client.AppiumDriver;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-
-import io.appium.java_client.AppiumDriver;
 
 import org.junit.After;
 import org.junit.Before;
@@ -16,11 +16,12 @@ import com.br.lab.property.MobileProperty;
 import com.br.lab.property.MobileProperty.DevicePlatform;
 
 
-public class HiAppiumTest {
+public class IOSTest {
 
-	private static final String APPIUM_SERVER = "http://127.0.0.1:4723/wd/hub/";
 	private static final int SIXTY_SECONDS = 60;
 	private static final long _5_SECONDS = 5000;
+	private static final String APPIUM_SERVER = "http://127.0.0.1:4723/wd/hub/";
+
 	private AppiumDriver appiumDriver;
 
 	@Before
@@ -37,13 +38,14 @@ public class HiAppiumTest {
 	}
 
 	@Test
-	public void test() throws MalformedURLException, InterruptedException {
+	public void testHelloIOS() throws MalformedURLException, InterruptedException {
 		appiumDriver.manage().timeouts().implicitlyWait(SIXTY_SECONDS, TimeUnit.SECONDS);
-		Thread.sleep(_5_SECONDS);
 		WebElement okButton = getElementByName("OK");
 		okButton.click();
 		WebElement iDontHaveAnyCodeButton = getElementByName("I don't have any code");
 		iDontHaveAnyCodeButton.click();
+		//click tutorial view
+		appiumDriver.tap(40, 132, 40, 90);
 	}
 
 	private WebElement getElementByName(String buttonName) {
