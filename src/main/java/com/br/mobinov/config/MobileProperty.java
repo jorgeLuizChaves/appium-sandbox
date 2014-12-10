@@ -1,4 +1,4 @@
-package com.br.lab.property;
+package com.br.mobinov.config;
 
 import java.io.FileInputStream;
 import java.io.IOException;

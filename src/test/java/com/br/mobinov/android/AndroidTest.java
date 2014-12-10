@@ -12,8 +12,8 @@ import org.junit.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import com.br.lab.property.MobileProperty;
-import com.br.lab.property.MobileProperty.DevicePlatform;
+import com.br.mobinov.config.MobileProperty;
+import com.br.mobinov.config.MobileProperty.DevicePlatform;
 
 
 public class AndroidTest {
